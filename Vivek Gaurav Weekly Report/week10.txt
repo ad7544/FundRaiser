@@ -1,0 +1,103 @@
+Vivek Gaurav Singh
+RA1711003010946
+ Simple XML code
+
+
+<?xml version = "1.0" encoding = "UTF-8"?>  
+<!-- xsl stylesheet declaration with xsl namespace:   
+Namespace tells the xlst processor about which   
+element is to be processed and which is used for output purpose only   
+-->   
+<xsl:stylesheet version = "1.0"   
+xmlns:xsl = "http://www.w3.org/1999/XSL/Transform">     
+<!-- xsl template declaration:    
+template tells the xlst processor about the section of xml   
+document which is to be formatted. It takes an XPath expression.   
+In our case, it is matching document root element and will   
+tell processor to process the entire document with this template.   
+-->   
+   <xsl:template match = "/">   
+      <!-- HTML tags   
+         Used for formatting purpose. Processor will skip them and browser   
+            will simply render them.   
+      -->   
+      <html>   
+         <body>  
+            <h2>Students</h2>   
+			This table contains the Students data.
+            <table border = "1">   
+               <tr bgcolor = "lightgreen">   
+                  <th>S.no.</th>   
+                  <th>First Name</th>   
+                  <th>Last Name</th>   
+                  <th>Regno</th>   
+                  <th>Year</th>
+				  <th>Branch</th>
+                  <th>CGPA</th>				  
+               </tr>   
+               <!-- for-each processing instruction   
+               Looks for each element matching the XPath expression   
+               -->   
+              <xsl:for-each select="class/Student">   
+                  <tr>   
+                     <td bgcolor="lighblue">   
+                        <!-- value-of processing instruction   
+                        process the value of the element matching the XPath expression   
+                        -->   
+                        <xsl:value-of select = "@S.no."/>   
+                     </td>   
+                     <td bgcolor="lighblue"><xsl:value-of select = "firstname"/></td>   
+                     <td bgcolor="lighblue"><xsl:value-of select = "lastname"/></td>   
+                     <td bgcolor="lighblue"><xsl:value-of select = "Regno"/></td>   
+                     <td bgcolor="lighblue"><xsl:value-of select = "Year"/></td>
+					 <td bgcolor="lighblue"><xsl:value-of select = "Branch"/></td>
+                     <td bgcolor="lighblue"><xsl:value-of select = "CGPA"/></td>					 
+                  </tr>   
+               </xsl:for-each>   
+            </table>   
+         </body>   
+      </html>   
+   </xsl:template>    
+</xsl:stylesheet>
+
+
+
+
+
+
+<?xml version = "1.0"?>  
+<?xml-stylesheet type = "text/xsl" href = "Student.xsl"?>   
+<class>   
+   <Student S.no. = "1">  
+      <firstname>Aryan</firstname>   
+      <lastname>Gupta</lastname>   
+      <Regno>11301</Regno>   
+      <Year>4th</Year>
+	  <Branch>CSE</Branch>
+      <CGPA>7.1</CGPA>	  
+   </Student>   
+   <Student S.no. = "2">   
+      <firstname>Sara</firstname>   
+      <lastname>Khan</lastname> 
+	  <Regno>11056</Regno>   
+      <Year>3th</Year>
+	  <Branch>IT</Branch>
+      <CGPA>7.8</CGPA>
+   </Student>   
+   <Student S.no. = "3">   
+      <firstname>Peter</firstname>   
+      <lastname>Symon</lastname>   
+      <Regno>11237</Regno>   
+      <Year>1st</Year>
+	  <Branch>Automobile</Branch>
+      <CGPA>9.1</CGPA>   
+   </Student>   
+   <Student S.no. = "4">   
+      <firstname>Samayra</firstname>   
+      <lastname>Sharma</lastname>   
+      <Regno>11457</Regno>   
+      <Year>2nd</Year>
+	  <Branch>ECE</Branch>
+      <CGPA>7.6</CGPA>   
+   </Student> 
+</class>  
