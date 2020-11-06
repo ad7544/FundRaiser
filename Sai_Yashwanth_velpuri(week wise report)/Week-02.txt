@@ -1,0 +1,142 @@
+Name: Sai Yashwanth Velpuri
+Reg No.: RA1711003010949
+
+Design a web page with an attractive background color, text color, an image, font etc.
+
+Tag Descriptions:
+Text header, denoted using the <h1>, <h2>, <h3>, <h4> tags.
+Paragraph, denoted using the <p> tag.
+Horizontal ruler, denoted using the <hr> tag.
+An image, denoted using the <img> tag.
+HTML Table, <table>. <tr> tag is used for table row. 
+Table elements <th> are bold and center aligned, <td> are normal and left aligned.
+List element with bullets <li>.
+
+Code:
+<html>
+<head>
+<title> RESUME </title>
+<link rel="stylesheet" href="resume.css">
+</head>
+<style>
+</style>
+
+<body>
+<div class="div1">
+  <img src = " photo.jpeg" width = 100 height = 100 align = right >
+  <h1>  Sai Yashwanth Velpuri </h1>
+  <p> Email :ss6063@srmist.edu.in <br>
+  Mobile :7893267076</p>
+</div>
+<div class="div1 div2">
+<h3> <u> Career Objective </u> </h3>
+<p align = "justify"> I’m a computer science engineering graduate seeking to find the
+opportunity to work in a fun and challenging working
+environment that will encourage me to improve and learn new
+and necessary skills as well as be motivated by the company to
+do my best for the sake of helping myself and the company
+advance in the software engineering industry.</p>
+
+<h3> <u> ACADEMIC DETAILS </u> </h3>
+<table id="table">
+<tr>
+	<th> Qualification </th>
+	<th> School/College </th>
+	<th> Board/University </th>
+	<th> Year of passing </th>
+	<th> Percentage/CGPA </th>
+</tr>
+<tr>
+	<td> Class X </td>
+	<td> Bhashyam Blooms </td>
+	<td> CBSE</td>
+	<td> 2015 </td>
+	<td> 9.8 </td>
+</tr>
+<tr>
+	<td> Class XII </td>
+	<td> BIIT Junior College </td>
+	<td> Andhra Pradesh State Board </td>
+	<td> 2017 </td>
+	<td> 95.6 </td>
+</tr>
+<tr>
+	<td> B.Tech </td>
+	<td> SRMIST </td>
+	<td>  </td>
+	<td> 2021 </td>
+	<td> 8.12 </td>
+</tr>
+</table>
+<h3> <u> INTERNSHIPS </u> </h3>
+	<p>
+	<li> Student, BSNL
+	<li> Programmer, Rapturize
+	</p>
+
+<h3> <u> SKILLS </u> </h3>
+	<p>
+	<li> Python
+	<li> C++
+	<li> C
+	<li> Java
+	<li> Machine Learning
+	<li> NLP
+	<li> Red Hat Enterprise Linux
+	</p>
+
+<h3> <u> CERTIFICATIONS </u> </h3>
+	<p>
+	<li> Python 3 specialization
+	<li> Python Classes and Inheritance
+	<li> Machine Learning with python
+	<li> Redhat Certified System Administrator
+	</p>
+
+<h3> <u> PROJECTS</u> </h3>
+	<p>
+	<li> Sudoku Solver
+	<li> Sentiment Analysis
+	<li>Python Project: Pillow, Tesseract, OpenCV
+	</p>
+
+<h3> <u> Hobbies </u> </h3>
+	<p>
+	<li> Gym
+	<li> Keyboard
+	<li> Drawing
+	<li> Volley Ball
+	</p>
+</div>
+</body>
+</html>
+
+CSS:
+body { background-color: #FFF5F5;
+font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;}
+.div1{
+  background-color: #FF4A5C;
+  color: #414141;
+  border-radius: 8px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: 70px;
+  margin-right: 70px;
+  box-shadow: 5px 5px 5px #414141;
+}
+.div2{
+  margin-top: 20px;
+}
+#table{
+  width: 1200px;
+  font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+}
+#table td, th{
+  color: #414141;
+  padding: 10px;
+}
+#table th{
+  background-color: #414141;
+  color: #FFF5F5;
+}

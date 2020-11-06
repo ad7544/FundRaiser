@@ -1,0 +1,90 @@
+Name: Sai Yashwanth Velpuri
+Reg no.: RA1711003010949
+
+Create a simple web page using HTML5 Semantic
+and Structural Elements
+
+items.html
+<html>
+<head>
+<title>ITEMS</title>
+<style>
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+<section>
+    <h1>Some Youtube Channels for Comparing Mobiles and accessories. </h1>
+    <p><a href="https://www.youtube.com/watch?v=p5aaOtJ0PyU">UNBOX THERAPY</a></p>
+    <p><a href="https://www.youtube.com/watch?v=pgmHkfvGYnY">MKBHD CHANNEL</a></p>
+</section>
+
+<section>
+    <h1>How To stay safe During Covid-19 Pandemic</h1>
+    <p><a href="https://www.youtube.com/watch?v=1APwq1df6Mw">WHO guide</a></p>
+    <p><a href="https://www.youtube.com/watch?v=U8r3oTVMtQ0">Recognizing Signs And Symptoms of Covid.</a></p>
+</section>
+
+<footer>
+  <p>Author: Sai Yashwanth Velpuri</p>
+  <p><a href="mailto:abc@gmail.com">mail me</a></p>
+
+</footer>
+</body>
+
+</html>
+
+index.html
+<html>
+<head>
+<title>ITEMS</title>
+<style>
+body {
+  background-color: lightblue;
+}
+
+h1 {
+  color: white;
+  text-align: center;
+}
+
+p {
+  font-family: verdana;
+  font-size: 20px;
+}
+</style>
+</head>
+<body>
+
+<section>
+    <h1>Some Youtube Channels for Comparing Mobiles and accessories. </h1>
+    <p><a href="https://www.youtube.com/watch?v=p5aaOtJ0PyU">UNBOX THERAPY</a></p>
+    <p><a href="https://www.youtube.com/watch?v=pgmHkfvGYnY">MKBHD CHANNEL</a></p>
+</section>
+
+<section>
+    <h1>How To stay safe During Covid-19 Pandemic</h1>
+    <p><a href="https://www.youtube.com/watch?v=1APwq1df6Mw">WHO guide</a></p>
+    <p><a href="https://www.youtube.com/watch?v=U8r3oTVMtQ0">Recognizing Signs And Symptoms of Covid.</a></p>
+</section>
+
+<footer>
+  <p>Author: Sai Yashwanth Velpuri</p>
+  <p><a href="mailto:abc@gmail.com">mail me</a></p>
+</footer>
+</body>
+
+</html>

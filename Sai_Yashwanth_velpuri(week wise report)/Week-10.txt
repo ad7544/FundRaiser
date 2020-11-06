@@ -1,0 +1,389 @@
+Name: Sai Yashwanth Velpuri
+Reg No.: RA1711003010949
+
+Organizer profile .php and .css files for project.
+
+organizerProfile.php
+
+<?php
+    include 'includes/sessions.inc.php';
+    $campaignCreator = $data['organizer_username'];
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Fund Raiser | Raise Fund At An Ease</title>
+    <link rel="stylesheet" href="assets/css/organizerProfile.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface|Philosopher" rel="stylesheet">
+</head>
+
+<body>
+    <!-- navigation section -->
+    <div class="nav-bar">
+        <a href="index.php">
+            <img src="assets/images/logo.png" alt="Fund Raiser logo">
+        </a>
+         
+        <div class="nav-links">
+            <a href="campaigns.php">CAMPAIGNS</a>
+            <a href="donors.php">DONORS</a>
+        </div>
+
+        <?php
+            if(!isset($_SESSION['o_id'])) { 
+                header("Location: index.php");                
+            } else { //if organizers are logged in
+                echo '<form action="includes/logout.inc.php" method="POST">
+                        <div class="btn-login-signup">
+                            <button type="submit" id="btn-login" name="submit">LOGOUT</button>
+                        </div>
+                      </form>';
+            }
+        ?>
+    </div>
+    <!-- body part -->
+    <div class="main-container">
+            <div class="about">
+                <h1>ABOUT</h1>
+                <table>
+                    <tr>
+                        <td>Full Name</td>
+                        <td>:</td>
+                        <td><?php echo $data['organizer_fullname'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Username</td>
+                        <td>:</td>
+                        <td><?php echo $data['organizer_username'];?></td>
+                    </tr>
+                    <tr>
+                        <td>E-Mail</td>
+                        <td>:</td>
+                        <td><?php echo $data['organizer_email'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>:</td>
+                        <td><?php echo $data['organizer_phone'];?></td>
+                    </tr>
+                    <tr>
+                        <td colspan="3" style="text-align: center;">
+                            <button onclick="window.location.href='organizerInfoSetting.php'"> <i class="fas fa-cog"></i>   Setting</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+
+            <div class="created-campaigns">
+                <h1>CAMPAIGNS CREATED</h1>
+<!-- show campaign of logged in organizer -->
+                <?php
+                    include_once 'includes/dbh.inc.php';
+
+                    $sql = "SELECT *, DATE(DATE_ADD(campaign_reg_date, INTERVAL campaign_days DAY)) AS endDate,
+                    DATE(campaign_reg_date) AS startDate 
+                    FROM campaigns WHERE campaignCreator = '$campaignCreator';";
+                    $result = mysqli_query($conn, $sql);
+                    $resultCheck = mysqli_num_rows($result);
+                    if($resultCheck > 0) {  
+                        while($row = mysqli_fetch_assoc($result)) {
+              ?>
+                <table cellpadding="10">
+                    <tr>
+                        <td style="width:20%;">Campaign Name</td>
+                        <td>:</td>
+                        <td style="width:80%;"><?php echo $row['campaign_name'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Campaign Type</td>
+                        <td>:</td>
+                        <td><?php echo $row['campaign_type'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Campaign Started On:</td>
+                        <td>:</td>
+                        <td><?php echo $row['startDate'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Campaign will end On:</td>
+                        <td>:</td>
+                        <td><?php echo $row['endDate'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Expected Amount</td>
+                        <td>:</td>
+                        <td>NPR: <?php echo $row['campaign_amount'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Campaign Description</td>
+                        <td>:</td>
+                        <td><?php echo $row['campaign_description'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Phone</td>
+                        <td>:</td>
+                        <td><?php echo $row['campaignPhone'];?></td>
+                    </tr>
+                    <tr>
+                        <td>Status</td>
+                        <td>:</td>
+                        <td><?php
+                            if($row['campaignApproval']==0) {
+                                echo "<span id='waiting'>Waiting for Approval</span>";
+                            } else {
+                                echo "<span id='approved'>Approved</span>";
+                            }
+                        ?></td>
+                    </tr>
+                </table><br><br>
+           <?php    
+                    }
+                } else if($resultCheck == 0) {
+                    echo "<p>you have not created any campaign.</p>";
+            ?>
+                    <button id="create-now-btn" onclick="window.location.href='createCampaign.php'">Create Now</button>
+            <?php
+                } else {
+                    exit();
+                }
+            ?>
+            
+            </div>
+    </div>
+
+    <?php
+        include_once 'footer.php';
+?>
+
+organizerProfile.css
+
+@font-face 
+{
+    font-family: HelveticaNeueMedium ;
+    src : url(../fonts/HelveticaNeueMedium.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueThin ;
+    src : url(../fonts/HelveticaNeueThin.otf);
+}
+
+@font-face 
+{
+    font-family: HelveticaNeueRegular ;
+    src : url(../fonts/HelveticaNeueRegular.ttf);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+.nav-bar {
+    height: 70px;
+    width: 100%;
+    box-shadow: 0 1px 3px #aaaaaa;  
+}
+
+.nav-bar img{
+    height: 50px;
+    width: auto;
+    margin-top: 10px;
+    margin-left: 10px;
+}
+
+.nav-links {
+    margin-top: -38px;
+    margin-left: 80px;
+    word-spacing: 15px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #707070;
+    font-family: HelveticaNeueMedium;
+}
+
+.nav-links a:hover {
+    color: #591484;
+}
+
+/* login button styling */
+.btn-login-signup {
+    position: absolute;
+    top: 10px;
+    left: 88%;
+    word-spacing: 15px;
+}
+
+/* code reuse for both button */
+.btn-login-signup button {
+    height: 50px;
+    width: 120px;
+    font-family: HelveticaNeueMedium;
+    outline: none;
+}
+
+
+#btn-login {
+    border: none;
+    border-radius: 25px;
+    background-color: #591484;
+    color: white;
+}
+
+#btn-login:hover {
+    cursor: pointer;
+}
+
+/* body part */
+
+.main-container {
+    text-align: center; 
+    font-family: HelveticaNeueMedium;
+    font-size: 19px;
+    color: #707070;
+    width: 100%;
+}
+
+.about{
+    text-align: center; 
+    align-content: center;
+    width: 40%;
+    margin-left: 30%;
+    height: 300px;
+    /* border: 1px solid red; */
+}
+
+.about table {
+    text-align: center;
+    align-content: center;
+    width: 70%;
+    margin-left: 73px;
+    border-collapse: collapse;
+    /* border: 1px solid red; */
+
+}
+
+.about td,tr {
+    padding: 5px;
+}
+
+.about td {
+    border-top: 1px solid black;
+}
+
+.about td:nth-child(1) {
+    text-align: right;   
+}
+
+.about td:nth-child(3) {
+    font-family: HelveticaNeueThin;
+    text-align: left;   
+}
+
+.about button {
+    width: 100px;
+    height: 40px;
+    border-radius: 25px;
+    outline: none;
+    border: none;
+    background-color: #591484;
+    color: white;
+    font-family: HelveticaNeueThin;
+    font-size:18px;
+}
+
+.about button:hover {
+    cursor: pointer;
+    font-size: 16px;
+}
+
+
+
+.created-campaigns {
+    text-align: center; 
+    align-content: center;
+    width: 100%;
+    /* border: 1px solid red; */
+}
+
+.created-campaigns table {
+    border: none;
+    text-align: center;
+    align-content: center;
+    width: 90%;
+    margin-left: 5%;
+    border-collapse: collapse;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.38);
+    border-radius: 25px;
+    
+}
+
+#waiting {
+    color: rgb(228, 48, 48);
+}
+#approved {
+    color: rgb(28, 158, 28);
+}
+
+#create-now-btn {
+    height: 60px;
+    width: 180px;
+    border-radius: 23px;
+    outline: none;
+    border: none;
+    background-color: #591484;
+    color: white;
+    font-family: HelveticaNeueMedium;
+    font-size: 25px; 
+}
+
+#create-now-btn:hover {
+    cursor: pointer;
+    font-size: 18px;
+}
+
+/* Footer section */
+
+.footer {
+    text-align: center;
+    width: 100%;
+    height: 50px;
+    font-family: HelveticaNeueThin;
+    color:black;
+    font-size: 15px;
+    margin-top: 5px;
+    bottom: 0;
+    /* border: 1px solid black; */
+}
+
+.footer a {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    bottom: -20px;
+}
+
+.footer span {
+    text-decoration: none;
+    color: inherit;
+    position: relative;
+    bottom: -20px;
+}
+
+.footer a:hover {
+    text-decoration: underline;
+}
+
+#footer-trademark {
+    font-size: 16px;
+    color: #591484;
+}
