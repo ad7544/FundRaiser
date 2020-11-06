@@ -1,0 +1,203 @@
+Name: Vivek Gaurav Singh
+Reg no.: RA1711003010946
+
+      HTML RESUME
+
+Tag Descriptions:
+Text header, denoted using the <h1>, <h2>, <h3>, <h4> tags.
+Paragraph, denoted using the <p> tag.
+Horizontal ruler, denoted using the <hr> tag.
+An image, denoted using the <img> tag.
+HTML Table, <table>. <tr> tag is used for table row. 
+Table elements <th> are bold and center aligned, <td> are normal and left aligned.
+List element with bullets <li>.
+
+<html>
+<head>
+<title> RESUME </title>
+</head>
+<style>
+p
+{
+border:5px solid green
+}
+</style>
+<p>
+
+<body>
+<centre>
+<h1>
+<u> MY RESUME </u>
+</h1>
+</centre>
+
+<h3> VIVEK GAURAV SINGH </h3>
+<h4> Progressive Engineer </h4>
+<img src = "vivek.jpeg.jpeg" width = 100 height = 100 hspace = 300 align = right >
+<h5> GANGOTRI NAGAR PRAYAGRAJ </h5>
+<h5> vivekgaurav1997@gmail.com</h5>
+<h5> Contact no: 9554xxxxxx </h5><hr>
+ 
+
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> CAREER OBJECTIVE </u>
+</h2>
+
+<h3> 
+ Creative and Analytical Computer Science Engineer who is proficient in C programming.
+ Rich background ensures strong abilities serving as collaborating team player with excellent communication and interpersonal skills.
+</h3>
+ 
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> ACADEMIC QUALIFICATION </u>
+</h2>
+<table border = 5 width = 1000>
+<tr>
+         <th> Qualification </th>
+         <th> Board/University </th>
+         <th> School/Collage</th>
+         <th> Year of passing </th>
+         <th> Marks </th> 
+</tr>
+
+<tr>
+         <th> B.tech </th>
+         <th> SRMIST </th>
+         <th> SRMIST</th>
+         <th> May 2021 </th>
+         <th> 87% </th> 
+</tr>
+
+<tr>
+         <th> Inter(Class 12th) </th>
+         <th> ISC</th>
+         <th> Boys High School(BHS) </th>
+         <th> 2017 </th>
+         <th> 80% </th> 
+</tr>
+
+  <tr>
+         <th> High School(Class 10th) </th>
+         <th> ICSE</th>
+         <th> Boys High School(BHS) </th>
+         <th> 2015 </th>
+         <th> 88% </th> 
+</tr>  
+</table>
+
+
+
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> INTERNSHIP </u>
+</h2>
+
+<ul>
+       <b>
+       <h3>
+       <li> KPMG Virtual Intership(DATA Analytics)
+       <li> P&G Enterpises Pvt. Lmt.</li>
+          <ul>
+         <li>Projected Submitted on Library Management System using Java Swings</li>
+       
+       </ul>
+       <h3>
+       <b>
+</ul>
+
+
+
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> PROJECTS</u>
+</h2>
+
+<ul>
+       <b>
+       <h3>
+       <li> Ardino Based Collision Detection System
+       <li> Deployed a chat bot using Microsoft Azure Bot Service
+       <li> Analysis of Hiring Problem Of Randomized Algorithms</li>
+       <h3>
+       <b>
+</ul>
+
+
+
+
+
+
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> STRENGTH </u>
+</h2>
+
+<ul>
+       <b>
+       <h3>
+       <li> Good Communication and inter-personal skill
+       <li>Focused and Confident With Positive attitude
+       <li> Good team Player
+       <li> Self Motivated</li>
+       <h3>
+       <b>
+</ul>
+
+
+
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> SKILLSET </u>
+</h2>
+
+<ul>
+       <b>
+       <h3>
+       <li> HTML5/CSS3
+       <li> Data Mining
+       <li> C
+       <li> JAVA</li>
+       <h3>
+       <b>
+</ul>
+
+
+
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> EXTRA CURRICULAR ACTIVTIES </u>
+</h2>
+
+<ul>
+       <b>
+       <h3>
+       <li> Worked as committee head in techno-management fest AARUUSH(2017-19)
+       <li> NCC Naval Wing Candidate
+       
+       <li> Participant of 6 session course of Discover Your Self</li>
+       <h3>
+       <b>
+</ul>
+
+
+
+<h2>
+<div style="background-color:gray;color:white;padding:05px;">
+<u> Personal Detail</u>
+</h2>
+<ul>
+       <b>
+       <h3>
+       <li> Name : Vivek Gaurav Singh
+       <li> Hobbies : </li>
+                           <ul>
+                           <li> Reading Books
+                           <li> Swimming
+                           <li> Chess</li>
+                   </ul>
+</ul>
+</body>
+</p>
+</html>
