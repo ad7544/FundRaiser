@@ -1,0 +1,44 @@
+Vivek Gaurav Singh
+RA1711003010946
+
+Simple JSP Program to multiply 2 numbers Using Eclipse and Tomcat Server
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Page1</title>
+</head>
+<body>
+<P> Hi my name is Vivek Gaurav Singh , give two numbers to multiply </P>
+<form action="NewFile1.jsp" method="post\">
+  <label for="fnm">First :</label><br>
+  <input type="text" name="fnm"><br>
+  <label for="lnm">Second :</label><br>
+  <input type="text" name="lnm"><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+
+
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+    
+    <%= "<h1> The multiplication is "+(Integer.parseInt(request.getParameter("fnm"))*Integer.parseInt(request.getParameter("lnm")))+"</h1>"%>
+    
+</body>
+</html>

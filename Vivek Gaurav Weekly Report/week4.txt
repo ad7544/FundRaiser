@@ -1,0 +1,78 @@
+Vivek Gaurav Singh
+RA1711003010946
+Created login and logout page(.php) and success event(.php)
+
+
+<?php
+
+session_start();
+
+if(isset($_POST['submit'])) {
+
+    require 'dbh.inc.php';
+    
+    $username = $_POST['username'];
+    $password = $_POST['password'];
+
+    $sql = "SELECT * FROM adminlogin WHERE admin_username='$username' AND admin_password='$password'";
+    $result = mysqli_query($conn,$sql);
+    $resultCheck = mysqli_num_rows($result);
+
+    if($resultCheck == 1) { //as there is only one admin
+        $_SESSION['admin_username'] = $username;
+        header("Location: ../home.php");
+    } else {
+        header("Location: ../index.php?login=failed");
+    }
+
+} else {
+    
+    header("Location: ../index.php?login=cannotaccess");
+}
+
+
+
+
+
+
+<?php
+
+if(isset($_GET['logout']) && $_GET['logout'] == 'done') {
+    session_start(); //we need to have the session running in order to destroy it
+    session_unset();    // unset all the session variables inside the browser
+    session_destroy(); //destroy the session
+    header("Location: ../index.php");
+    exit();
+}
+
+
+
+
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Event Created Successfully</title>
+	<style>
+		.demo {
+			text-align: center;
+			margin-top: 20%;
+			font-family: Helvetica;
+			font-weight: bold;
+			font-size: 30px;
+			color: #707070;
+		}
+		.demo a {
+			text-decoration: none;
+		}
+	</style>
+</head>
+<body>
+	 <div class="demo">
+	 	<center>
+	 		Event has been created successfully!!!<br>
+	 		<a href="../home.php">Click here to return to Homepage</a>
+	 	</center>
+	 </div>
+</body>
+</html>

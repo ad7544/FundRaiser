@@ -1,0 +1,31 @@
+Vivek Gaurav Singh
+RA1711003010946
+
+Simple AJAX Program to run the JSP code done in week 8(multiplication of 2 numbers) Using Eclipse and Tomcat Server
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<h2>The XMLHttpRequest Object</h2>
+<button type="button" onclick="loadDoc()">Change Content</button>
+</div>
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "NewFile.jsp", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
