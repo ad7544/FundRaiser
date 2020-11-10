@@ -1,0 +1,29 @@
+Name: Aviral Chauhan
+Reg no.: RA1711003011204
+
+Create a simple web page using HTML5 Semantic
+and Structural Elements
+
+
+<html>
+    <head>
+    <title>My First Web Programming Lab</title>
+    </head>
+    <!-- The information between the BODY and /BODY tags is displayed.-->
+    <body>
+    <h1>This is H1 tag</h1>
+    <p>Making any text <b>bold</b></p>
+    <ul>
+    <li>The first item in list</li>
+    <li>The second item; Using <i>italic</i> key words</li>
+    </ul>
+    <p>Including an Image-:</p>
+    <p><img src="" alt="Some Text to be Displayed in place of image"></p>
+    <p>Including some Hyperlink- <a href="https://www.google.com/"> This will take us to Google</a>
+        <br>
+    Breaking up the page with a horizontal rule.</p>
+    <hr>
+    <p>linking to some anoher website <a href="page2.html"></a></p>
+
+    </body>
+    </html>

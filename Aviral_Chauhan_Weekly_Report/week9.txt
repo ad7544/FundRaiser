@@ -1,0 +1,109 @@
+Name: Aviral Chauhan
+Reg no.: RA1711003011204
+
+
+
+
+Simple applications using JSP and AJAX.
+JSP
+JSP.html
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Page1</title>
+</head>
+<body>
+<P>Give two numbers to add </P>
+<form action="Adder.jsp" method="post\">
+  <label for="fnm">First :</label><br>
+  <input type="text" name="fnm"><br>
+  <label for="lnm">Second :</label><br>
+  <input type="text" name="lnm"><br>
+  <input type="submit" value="Submit">
+</form>
+</body>
+</html>
+
+Adder.jsp
+
+<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
+    pageEncoding="ISO-8859-1"%>
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+</head>
+<body>
+ 
+    
+    <%= "<h1> The sum is "+(Integer.parseInt(request.getParameter("fnm"))+Integer.parseInt(request.getParameter("lnm")))+"</h1>"%>
+    
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+AJAX
+Ajax.html
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<div id="demo">
+<p>Click to change content</p>
+</div>
+<button type="button" onclick="loadDoc()">Change Content</button>
+
+
+<script>
+function loadDoc() {
+  var xhttp = new XMLHttpRequest();
+  xhttp.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+      document.getElementById("demo").innerHTML =
+      this.responseText;
+    }
+  };
+  xhttp.open("GET", "ajax_info.txt", true);
+  xhttp.send();
+}
+</script>
+
+</body>
+</html>
+
+demo.xml
+<?xml version="1.0" encoding="UTF-8"?>
+<students>
+ <student>
+   <name>Rick Grimes</name>
+   <age>35</age>
+   <subject>Maths</subject>
+   <gender>Male</gender>
+ </student>
+ <student>
+   <name>Daryl Dixon </name>
+   <age>33</age>
+   <subject>Science</subject>
+   <gender>Male</gender>
+ </student>
+ <student>
+   <name>Maggie</name>
+   <age>36</age>
+   <subject>Arts</subject>
+   <gender>Female</gender>
+ </student>
+</students>
+
+Ajax_info.txt
+Content Changed!
